@@ -14,9 +14,18 @@ import Products from './pages/Products'
 import Quality from './pages/Quality'
 import Contact from './pages/Contact'
 
-// Pages — create these as empty components for now
-const Home = () => <div className="pt-24 text-center text-navy text-2xl"> <Hero/> <Statsbar/> <Aboutsnapshot/> <Productcategories/> <TherapeuticAreas/> <Whyus/> <Certifications/> <EnquiryBanner/> </div>
-
+const Home = () => (
+  <>
+    <Hero />
+    <Statsbar />
+    <Aboutsnapshot />
+    <Productcategories />
+    <TherapeuticAreas />
+    <Whyus />
+    <Certifications />
+    <EnquiryBanner />
+  </>
+)
 
 export default function App() {
   return (

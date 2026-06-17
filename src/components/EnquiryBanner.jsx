@@ -4,9 +4,9 @@ import { motion } from 'framer-motion'
 
 export default function EnquiryBanner() {
   return (
-    <section className="bg-pharmagreen py-20">
+    <section className="bg-deep py-24 border-t border-gold/10">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+        <div className="grid md:grid-cols-2 gap-16 items-center">
 
           {/* Left — Text */}
           <motion.div
@@ -15,13 +15,16 @@ export default function EnquiryBanner() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <span className="inline-block bg-white/20 text-white text-xs font-semibold tracking-widest uppercase px-3 py-1 rounded-full mb-4">
-              B2B Enquiries Welcome
-            </span>
-            <h2 className="text-3xl md:text-4xl font-bold text-white leading-snug mb-4">
-              Looking for a Reliable <br /> Pharma Partner?
+            <div className="flex items-center gap-3 mb-6">
+              <div className="h-px w-10 bg-gold" />
+              <span className="text-[11px] tracking-[0.3em] uppercase font-serif text-gold">
+                B2B Enquiries Welcome
+              </span>
+            </div>
+            <h2 className="font-serif text-4xl font-semibold text-cream leading-snug mb-5">
+              Looking for a Reliable<br />Pharma Partner?
             </h2>
-            <p className="text-green-100 text-sm leading-relaxed mb-8 max-w-md">
+            <p className="text-cream/55 text-sm leading-relaxed mb-10 max-w-md">
               Whether you are a distributor, hospital chain, or healthcare provider —
               we are equipped to meet your pharmaceutical supply needs at scale.
             </p>
@@ -29,24 +32,20 @@ export default function EnquiryBanner() {
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
                 to="/contact"
-                className="inline-flex items-center justify-center gap-2 bg-white text-navy font-semibold px-6 py-3 rounded hover:bg-navy hover:text-white transition-colors duration-200"
+                className="inline-flex items-center justify-center gap-2 bg-gold text-deep text-[11px] tracking-[0.18em] uppercase font-semibold px-7 py-4 hover:bg-cream transition-all duration-300"
               >
-                <Mail size={18} />
-                Send Enquiry
+                <Mail size={13} /> Send Enquiry
               </Link>
-
-              
               <a
                 href="tel:+911234567890"
-                className="inline-flex items-center justify-center gap-2 border-2 border-white text-white font-semibold px-6 py-3 rounded hover:bg-white hover:text-navy transition-colors duration-200"
+                className="inline-flex items-center justify-center gap-2 border border-cream/25 text-cream text-[11px] tracking-[0.18em] uppercase font-medium px-7 py-4 hover:border-gold hover:text-gold transition-all duration-300"
               >
-                <Phone size={18} />
-                Call Us Now
+                <Phone size={13} /> Call Us Now
               </a>
             </div>
           </motion.div>
 
-          {/* Right — Contact Info Cards */}
+          {/* Right — Info Cards */}
           <motion.div
             initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -54,25 +53,16 @@ export default function EnquiryBanner() {
             viewport={{ once: true }}
             className="flex flex-col gap-4"
           >
-            <div className="bg-white/10 backdrop-blur rounded-xl p-6 border border-white/20">
-              <p className="text-white font-semibold mb-1">📍 Registered Office</p>
-              <p className="text-green-100 text-sm">
-                Upkar Pharma Pvt. Ltd., Industrial Area, Phase II,{' '}
-                New Delhi — 110020, India
-              </p>
-            </div>
-
-            <div className="bg-white/10 backdrop-blur rounded-xl p-6 border border-white/20">
-              <p className="text-white font-semibold mb-1">📞 Phone & Email</p>
-              <p className="text-green-100 text-sm">+91 12345 67890</p>
-              <p className="text-green-100 text-sm">enquiry@upkarpharma.com</p>
-            </div>
-
-            <div className="bg-white/10 backdrop-blur rounded-xl p-6 border border-white/20">
-              <p className="text-white font-semibold mb-1">🕐 Business Hours</p>
-              <p className="text-green-100 text-sm">Monday – Saturday: 9:00 AM – 6:00 PM</p>
-              <p className="text-green-100 text-sm">Sunday: Closed</p>
-            </div>
+            {[
+              { label: 'Registered Office', content: 'Upkar Pharma Pvt. Ltd., Industrial Area, Phase II, New Delhi — 110020, India' },
+              { label: 'Phone & Email', content: '+91 12345 67890 · enquiry@upkarpharma.com' },
+              { label: 'Business Hours', content: 'Monday – Saturday: 9:00 AM – 6:00 PM IST' },
+            ].map((item, i) => (
+              <div key={i} className="border border-gold/20 p-6 hover:border-gold/40 transition-colors duration-300">
+                <p className="text-[10px] tracking-[0.25em] uppercase text-gold font-serif mb-2">{item.label}</p>
+                <p className="text-cream/60 text-sm leading-relaxed">{item.content}</p>
+              </div>
+            ))}
           </motion.div>
 
         </div>

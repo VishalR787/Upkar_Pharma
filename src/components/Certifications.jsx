@@ -12,7 +12,7 @@ const certs = [
 
 export default function Certifications() {
   return (
-    <section className="bg-offwhite py-20">
+    <section className="bg-parchment py-24">
       <div className="max-w-7xl mx-auto px-6">
 
         {/* Header */}
@@ -23,13 +23,13 @@ export default function Certifications() {
           viewport={{ once: true }}
           className="text-center mb-14"
         >
-          <span className="text-pharmagreen text-sm font-semibold tracking-widest uppercase">
-            Trust & Compliance
-          </span>
-          <h2 className="text-3xl md:text-4xl font-bold text-navy mt-3">
-            Certifications & Accreditations
-          </h2>
-          <p className="text-gray-400 mt-3 max-w-xl mx-auto text-sm">
+          <div className="flex items-center justify-center gap-3 mb-5">
+            <div className="h-px w-10 bg-gold" />
+            <span className="text-[11px] tracking-[0.3em] uppercase font-serif text-gold">Trust & Compliance</span>
+            <div className="h-px w-10 bg-gold" />
+          </div>
+          <h2 className="font-serif text-4xl font-semibold text-deep">Certifications & Accreditations</h2>
+          <p className="text-charcoal/60 mt-4 max-w-xl mx-auto text-sm leading-relaxed">
             Our facilities and processes are regularly audited and certified by
             national and international regulatory bodies.
           </p>
@@ -44,31 +44,38 @@ export default function Certifications() {
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.3, delay: i * 0.08 }}
               viewport={{ once: true }}
-              className="bg-white rounded-xl p-5 text-center shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 flex flex-col items-center gap-3"
+              className="bg-white p-5 text-center border border-gold/10 hover:border-gold/40 hover:-translate-y-1 transition-all duration-300 flex flex-col items-center gap-3"
             >
-              <BadgeCheck size={32} className="text-pharmagreen" />
-              <p className="text-navy font-bold text-sm">{cert.name}</p>
-              <p className="text-gray-400 text-xs leading-snug">{cert.desc}</p>
+              <BadgeCheck size={26} className="text-gold" />
+              <p className="font-serif text-deep font-semibold text-sm">{cert.name}</p>
+              <p className="text-charcoal/50 text-xs leading-snug">{cert.desc}</p>
             </motion.div>
           ))}
         </div>
 
-        {/* Bottom Quality Statement */}
+        {/* Quality Statement */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
-          className="bg-navy rounded-2xl p-10 text-center"
+          className="bg-deep p-14 text-center relative border border-gold/10"
         >
-          <h3 className="text-white text-2xl font-bold mb-3">
+          <div className="absolute top-5 left-5 w-8 h-8 border-t border-l border-gold/30" />
+          <div className="absolute top-5 right-5 w-8 h-8 border-t border-r border-gold/30" />
+          <div className="absolute bottom-5 left-5 w-8 h-8 border-b border-l border-gold/30" />
+          <div className="absolute bottom-5 right-5 w-8 h-8 border-b border-r border-gold/30" />
+
+          <div className="h-px w-14 bg-gold/40 mx-auto mb-8" />
+          <h3 className="font-serif text-cream text-2xl font-semibold mb-4">
             Quality is Not a Checkbox. It&apos;s Our Culture.
           </h3>
-          <p className="text-blue-200 text-sm max-w-2xl mx-auto leading-relaxed">
+          <p className="text-cream/55 text-sm max-w-2xl mx-auto leading-relaxed">
             Every batch manufactured at Upkar Pharma undergoes rigorous in-process
             and final quality checks. Our dedicated QA team ensures zero compromise
             on safety, efficacy, and compliance — every single time.
           </p>
+          <div className="h-px w-14 bg-gold/40 mx-auto mt-8" />
         </motion.div>
 
       </div>

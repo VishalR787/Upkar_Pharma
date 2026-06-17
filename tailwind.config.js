@@ -4,10 +4,18 @@ export default {
   theme: {
     extend: {
       colors: {
-        navy: '#1B4F72',
-        pharmagreen: '#27AE60',
-        offwhite: '#F8FAFC',
-      }
+        deep: '#1A1A2E',
+        gold: '#C9A84C',
+        'gold-light': '#E8D5A3',
+        cream: '#FAF6EF',
+        parchment: '#EDE4D3',
+        wine: '#6B2737',
+        charcoal: '#3D3D52',
+        muted: '#8C8C9E',
+      },
+      fontFamily: {
+        serif: ['"Playfair Display"', 'Georgia', 'serif'],
+      },
     },
   },
   plugins: [],

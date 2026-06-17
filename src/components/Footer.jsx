@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { FlaskConical, Mail, Phone, MapPin } from 'lucide-react'
+import { Mail, Phone, MapPin } from 'lucide-react'
 
 const quickLinks = [
   { name: 'Home', path: '/' },
@@ -9,51 +9,46 @@ const quickLinks = [
   { name: 'Contact', path: '/contact' },
 ]
 
-const productLinks = [
-  'Tablets', 'Capsules', 'Syrups',
-  'Injections', 'Ointments', 'Nutraceuticals'
-]
+const productLinks = ['Tablets', 'Capsules', 'Syrups', 'Injections', 'Ointments', 'Nutraceuticals']
 
 export default function Footer() {
   return (
-    <footer className="bg-navy text-white">
+    <footer className="bg-deep border-t border-gold/10">
 
       {/* Main Footer */}
       <div className="max-w-7xl mx-auto px-6 py-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10">
 
         {/* Brand */}
         <div>
-          <div className="flex items-center gap-2 mb-4">
-            <FlaskConical size={22} className="text-pharmagreen" />
-            <span className="font-bold text-lg">
-              Upkar <span className="text-pharmagreen">Pharma</span>
-            </span>
+          <div className="mb-5">
+            <p className="font-serif text-xl font-semibold text-cream">
+              Upkar <span className="text-gold">Pharma</span>
+            </p>
+            <p className="text-[9px] tracking-[0.3em] uppercase text-cream/30 mt-1">Est. 2004</p>
           </div>
-          <p className="text-blue-200 text-sm leading-relaxed mb-6">
+          <div className="h-px w-8 bg-gold/30 mb-5" />
+          <p className="text-cream/45 text-sm leading-relaxed mb-6">
             A trusted B2B pharmaceutical manufacturer delivering quality,
             compliance, and reliability across India since 2004.
           </p>
-          <div className="flex gap-3">
-            <a
-              href="mailto:enquiry@upkarpharma.com"
-              className="w-9 h-9 rounded-lg bg-white/10 flex items-center justify-center hover:bg-pharmagreen transition-colors duration-200"
-            >
-              <Mail size={16} />
-            </a>
-          </div>
+          <a
+            href="mailto:enquiry@upkarpharma.com"
+            className="inline-flex items-center justify-center w-9 h-9 border border-gold/25 text-gold hover:bg-gold hover:text-deep transition-all duration-300"
+          >
+            <Mail size={13} />
+          </a>
         </div>
 
         {/* Quick Links */}
         <div>
-          <h4 className="text-white font-semibold text-sm uppercase tracking-widest mb-5">
-            Quick Links
-          </h4>
+          <h4 className="text-[10px] tracking-[0.3em] uppercase text-gold font-serif mb-4">Quick Links</h4>
+          <div className="h-px w-8 bg-gold/25 mb-5" />
           <ul className="space-y-3">
             {quickLinks.map((link) => (
               <li key={link.name}>
                 <Link
                   to={link.path}
-                  className="text-blue-200 text-sm hover:text-pharmagreen transition-colors duration-200"
+                  className="text-cream/45 text-sm hover:text-gold transition-colors duration-300"
                 >
                   {link.name}
                 </Link>
@@ -64,15 +59,14 @@ export default function Footer() {
 
         {/* Products */}
         <div>
-          <h4 className="text-white font-semibold text-sm uppercase tracking-widest mb-5">
-            Products
-          </h4>
+          <h4 className="text-[10px] tracking-[0.3em] uppercase text-gold font-serif mb-4">Products</h4>
+          <div className="h-px w-8 bg-gold/25 mb-5" />
           <ul className="space-y-3">
             {productLinks.map((item) => (
               <li key={item}>
                 <Link
                   to="/products"
-                  className="text-blue-200 text-sm hover:text-pharmagreen transition-colors duration-200"
+                  className="text-cream/45 text-sm hover:text-gold transition-colors duration-300"
                 >
                   {item}
                 </Link>
@@ -83,20 +77,19 @@ export default function Footer() {
 
         {/* Contact */}
         <div>
-          <h4 className="text-white font-semibold text-sm uppercase tracking-widest mb-5">
-            Contact Us
-          </h4>
+          <h4 className="text-[10px] tracking-[0.3em] uppercase text-gold font-serif mb-4">Contact Us</h4>
+          <div className="h-px w-8 bg-gold/25 mb-5" />
           <ul className="space-y-4">
-            <li className="flex items-start gap-3 text-blue-200 text-sm">
-              <MapPin size={16} className="text-pharmagreen mt-0.5 shrink-0" />
+            <li className="flex items-start gap-3 text-cream/45 text-sm">
+              <MapPin size={13} className="text-gold mt-0.5 shrink-0" />
               Industrial Area, Phase II, New Delhi — 110020, India
             </li>
-            <li className="flex items-center gap-3 text-blue-200 text-sm">
-              <Phone size={16} className="text-pharmagreen shrink-0" />
+            <li className="flex items-center gap-3 text-cream/45 text-sm">
+              <Phone size={13} className="text-gold shrink-0" />
               +91 12345 67890
             </li>
-            <li className="flex items-center gap-3 text-blue-200 text-sm">
-              <Mail size={16} className="text-pharmagreen shrink-0" />
+            <li className="flex items-center gap-3 text-cream/45 text-sm">
+              <Mail size={13} className="text-gold shrink-0" />
               enquiry@upkarpharma.com
             </li>
           </ul>
@@ -105,21 +98,17 @@ export default function Footer() {
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t border-white/10">
+      <div className="border-t border-gold/10">
         <div className="max-w-7xl mx-auto px-6 py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p className="text-blue-200 text-xs">
+          <p className="text-cream/25 text-xs">
             &copy; {new Date().getFullYear()} Upkar Pharma Pvt. Ltd. All rights reserved.
           </p>
           <div className="flex gap-6">
-            <a href="#" className="text-blue-200 text-xs hover:text-pharmagreen transition-colors">
-              Privacy Policy
-            </a>
-            <a href="#" className="text-blue-200 text-xs hover:text-pharmagreen transition-colors">
-              Terms of Use
-            </a>
-            <a href="#" className="text-blue-200 text-xs hover:text-pharmagreen transition-colors">
-              Sitemap
-            </a>
+            {['Privacy Policy', 'Terms of Use', 'Sitemap'].map((item) => (
+              <a key={item} href="#" className="text-cream/25 text-xs hover:text-gold transition-colors duration-300">
+                {item}
+              </a>
+            ))}
           </div>
         </div>
       </div>

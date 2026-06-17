@@ -13,7 +13,7 @@ const categories = [
 
 export default function ProductCategories() {
   return (
-    <section className="bg-white py-20">
+    <section className="bg-white py-24">
       <div className="max-w-7xl mx-auto px-6">
 
         {/* Header */}
@@ -24,20 +24,20 @@ export default function ProductCategories() {
           viewport={{ once: true }}
           className="text-center mb-14"
         >
-          <span className="text-pharmagreen text-sm font-semibold tracking-widest uppercase">
-            What We Manufacture
-          </span>
-          <h2 className="text-3xl md:text-4xl font-bold text-navy mt-3">
-            Our Product Range
-          </h2>
-          <p className="text-gray-400 mt-3 max-w-xl mx-auto text-sm">
+          <div className="flex items-center justify-center gap-3 mb-5">
+            <div className="h-px w-10 bg-gold" />
+            <span className="text-[11px] tracking-[0.3em] uppercase font-serif text-gold">What We Manufacture</span>
+            <div className="h-px w-10 bg-gold" />
+          </div>
+          <h2 className="font-serif text-4xl font-semibold text-deep">Our Product Range</h2>
+          <p className="text-charcoal/60 mt-4 max-w-xl mx-auto text-sm leading-relaxed">
             From tablets to nutraceuticals — we manufacture across a wide spectrum
             of dosage forms with consistent quality at every step.
           </p>
         </motion.div>
 
         {/* Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
           {categories.map((cat, i) => (
             <motion.div
               key={i}
@@ -45,16 +45,16 @@ export default function ProductCategories() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: i * 0.1 }}
               viewport={{ once: true }}
-              className="group bg-offwhite rounded-xl p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer"
+              className="group bg-cream border border-gold/10 p-8 hover:border-gold/40 hover:-translate-y-1 transition-all duration-300"
             >
-              <div className="text-4xl mb-4">{cat.icon}</div>
-              <h3 className="text-navy font-semibold text-lg mb-2">{cat.name}</h3>
-              <p className="text-gray-400 text-sm leading-relaxed mb-4">{cat.desc}</p>
+              <div className="text-3xl mb-5">{cat.icon}</div>
+              <h3 className="font-serif text-deep font-semibold text-xl mb-2">{cat.name}</h3>
+              <p className="text-charcoal/60 text-sm leading-relaxed mb-6">{cat.desc}</p>
               <Link
                 to="/products"
-                className="inline-flex items-center gap-1 text-pharmagreen text-sm font-medium group-hover:gap-2 transition-all"
+                className="inline-flex items-center gap-1.5 text-[11px] tracking-[0.15em] uppercase text-gold group-hover:gap-3 transition-all duration-300"
               >
-                View Product <ArrowRight size={14} />
+                View Products <ArrowRight size={12} />
               </Link>
             </motion.div>
           ))}
@@ -70,9 +70,9 @@ export default function ProductCategories() {
         >
           <Link
             to="/products"
-            className="inline-flex items-center gap-2 bg-navy text-white font-semibold px-8 py-3 rounded hover:bg-pharmagreen transition-colors duration-200"
+            className="inline-flex items-center gap-2 bg-deep text-cream text-[11px] tracking-[0.18em] uppercase font-medium px-9 py-4 hover:bg-gold hover:text-deep transition-all duration-300"
           >
-            View All Products <ArrowRight size={18} />
+            View All Products <ArrowRight size={13} />
           </Link>
         </motion.div>
 

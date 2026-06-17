@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { Menu, X, FlaskConical } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
 
 const navLinks = [
   { name: 'Home', path: '/' },
@@ -21,24 +21,28 @@ export default function Navbar() {
   }, [])
 
   return (
-    <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white shadow-md' : 'bg-white/90 backdrop-blur'}`}>
+    <nav className={`fixed top-0 w-full z-50 transition-all duration-500 ${
+      scrolled
+        ? 'bg-cream/98 backdrop-blur-md shadow-sm border-b border-gold/10'
+        : 'bg-cream/85 backdrop-blur-sm'
+    }`}>
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
 
         {/* Logo */}
-        <Link to="/" className="flex items-center gap-2">
-          <FlaskConical className="text-pharmagreen" size={26} />
-          <span className="text-navy font-bold text-xl tracking-tight">
-            Upkar <span className="text-pharmagreen">Pharma</span>
+        <Link to="/" className="flex flex-col leading-none">
+          <span className="font-serif text-xl font-semibold tracking-wide text-deep">
+            Upkar <span className="text-gold">Pharma</span>
           </span>
+          <span className="text-[9px] tracking-[0.3em] uppercase text-muted">Est. 2004</span>
         </Link>
 
         {/* Desktop Links */}
-        <ul className="hidden md:flex items-center gap-8">
+        <ul className="hidden md:flex items-center gap-9">
           {navLinks.map(link => (
             <li key={link.name}>
               <Link
                 to={link.path}
-                className="text-sm font-medium text-gray-600 hover:text-pharmagreen transition-colors duration-200"
+                className="text-[11px] tracking-[0.18em] uppercase font-medium text-charcoal hover:text-gold transition-colors duration-300"
               >
                 {link.name}
               </Link>
@@ -46,32 +50,34 @@ export default function Navbar() {
           ))}
         </ul>
 
-        {/* CTA Button */}
+        {/* CTA */}
         <Link
           to="/contact"
-          className="hidden md:inline-block bg-navy text-white text-sm font-semibold px-5 py-2 rounded hover:bg-pharmagreen transition-colors duration-200"
+          className="hidden md:inline-block border border-deep text-deep text-[11px] tracking-[0.18em] uppercase font-medium px-5 py-2.5 hover:bg-deep hover:text-cream transition-all duration-300"
         >
           Partner With Us
         </Link>
 
-        {/* Mobile Menu Toggle */}
-        <button
-          className="md:hidden text-navy"
-          onClick={() => setMenuOpen(!menuOpen)}
-        >
-          {menuOpen ? <X size={24} /> : <Menu size={24} />}
+        {/* Mobile Toggle */}
+        <button className="md:hidden text-deep" onClick={() => setMenuOpen(!menuOpen)}>
+          {menuOpen ? <X size={22} /> : <Menu size={22} />}
         </button>
       </div>
 
+      {/* Gold hairline on scroll */}
+      {scrolled && (
+        <div className="h-px bg-gradient-to-r from-transparent via-gold/30 to-transparent" />
+      )}
+
       {/* Mobile Menu */}
       {menuOpen && (
-        <div className="md:hidden bg-white border-t px-6 pb-4">
+        <div className="md:hidden bg-cream border-t border-gold/10 px-6 pb-6 pt-4">
           {navLinks.map(link => (
             <Link
               key={link.name}
               to={link.path}
               onClick={() => setMenuOpen(false)}
-              className="block py-2 text-sm font-medium text-gray-700 hover:text-pharmagreen"
+              className="block py-3 text-[11px] tracking-[0.18em] uppercase font-medium text-charcoal hover:text-gold border-b border-parchment transition-colors"
             >
               {link.name}
             </Link>
@@ -79,7 +85,7 @@ export default function Navbar() {
           <Link
             to="/contact"
             onClick={() => setMenuOpen(false)}
-            className="block mt-3 bg-navy text-white text-sm font-semibold px-5 py-2 rounded text-center hover:bg-pharmagreen transition-colors"
+            className="block mt-5 border border-deep text-deep text-[11px] tracking-[0.18em] uppercase font-medium px-5 py-3 text-center hover:bg-deep hover:text-cream transition-all duration-300"
           >
             Partner With Us
           </Link>

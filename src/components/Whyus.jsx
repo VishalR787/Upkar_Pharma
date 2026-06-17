@@ -3,32 +3,32 @@ import { ShieldCheck, Truck, Package, Leaf, MapPin, FlaskConical } from 'lucide-
 
 const reasons = [
   {
-    icon: <ShieldCheck size={28} />,
+    icon: <ShieldCheck size={22} />,
     title: 'GMP Certified',
     desc: 'All our facilities meet WHO-GMP standards ensuring pharmaceutical grade quality at every stage.',
   },
   {
-    icon: <Truck size={28} />,
+    icon: <Truck size={22} />,
     title: 'Timely Delivery',
     desc: 'Reliable logistics network ensuring on-time dispatch and delivery across 30+ states.',
   },
   {
-    icon: <Package size={28} />,
+    icon: <Package size={22} />,
     title: 'Custom Packaging',
     desc: 'Flexible packaging solutions tailored to your branding and regulatory requirements.',
   },
   {
-    icon: <Leaf size={28} />,
+    icon: <Leaf size={22} />,
     title: 'Ethical Sourcing',
     desc: 'Raw materials sourced from certified vendors with full traceability and compliance.',
   },
   {
-    icon: <MapPin size={28} />,
+    icon: <MapPin size={22} />,
     title: 'Pan-India Reach',
     desc: 'Strong distribution network covering hospitals, distributors and pharmacies nationwide.',
   },
   {
-    icon: <FlaskConical size={28} />,
+    icon: <FlaskConical size={22} />,
     title: 'R&D Focus',
     desc: 'Continuous investment in research to develop new formulations and improve existing ones.',
   },
@@ -36,7 +36,7 @@ const reasons = [
 
 export default function WhyUs() {
   return (
-    <section className="bg-white py-20">
+    <section className="bg-white py-24">
       <div className="max-w-7xl mx-auto px-6">
 
         {/* Header */}
@@ -47,20 +47,22 @@ export default function WhyUs() {
           viewport={{ once: true }}
           className="text-center mb-14"
         >
-          <span className="text-pharmagreen text-sm font-semibold tracking-widest uppercase">
-            Our Strengths
-          </span>
-          <h2 className="text-3xl md:text-4xl font-bold text-navy mt-3">
+          <div className="flex items-center justify-center gap-3 mb-5">
+            <div className="h-px w-10 bg-gold" />
+            <span className="text-[11px] tracking-[0.3em] uppercase font-serif text-gold">Our Strengths</span>
+            <div className="h-px w-10 bg-gold" />
+          </div>
+          <h2 className="font-serif text-4xl font-semibold text-deep">
             Why Partner With Upkar Pharma
           </h2>
-          <p className="text-gray-400 mt-3 max-w-xl mx-auto text-sm">
+          <p className="text-charcoal/60 mt-4 max-w-xl mx-auto text-sm leading-relaxed">
             We bring more than just products — we bring reliability, compliance,
             and a partnership built on trust.
           </p>
         </motion.div>
 
         {/* Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
           {reasons.map((item, i) => (
             <motion.div
               key={i}
@@ -68,13 +70,13 @@ export default function WhyUs() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: i * 0.1 }}
               viewport={{ once: true }}
-              className="flex flex-col gap-4 p-6 rounded-xl border border-gray-100 hover:border-pharmagreen hover:shadow-md transition-all duration-300"
+              className="group flex flex-col gap-4 p-8 border border-gold/10 hover:border-gold/40 hover:-translate-y-1 transition-all duration-300"
             >
-              <div className="w-12 h-12 rounded-lg bg-offwhite flex items-center justify-center text-pharmagreen">
+              <div className="w-11 h-11 flex items-center justify-center text-gold border border-gold/30 group-hover:bg-gold group-hover:text-deep transition-all duration-300">
                 {item.icon}
               </div>
-              <h3 className="text-navy font-semibold text-lg">{item.title}</h3>
-              <p className="text-gray-400 text-sm leading-relaxed">{item.desc}</p>
+              <h3 className="font-serif text-deep font-semibold text-lg">{item.title}</h3>
+              <p className="text-charcoal/60 text-sm leading-relaxed">{item.desc}</p>
             </motion.div>
           ))}
         </div>

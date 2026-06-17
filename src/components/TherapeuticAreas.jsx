@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 
 const areas = [
@@ -17,7 +18,7 @@ const areas = [
 
 export default function TherapeuticAreas() {
   return (
-    <section className="bg-offwhite py-20">
+    <section className="bg-cream py-24">
       <div className="max-w-7xl mx-auto px-6">
 
         {/* Header */}
@@ -28,20 +29,20 @@ export default function TherapeuticAreas() {
           viewport={{ once: true }}
           className="text-center mb-14"
         >
-          <span className="text-pharmagreen text-sm font-semibold tracking-widest uppercase">
-            Areas We Serve
-          </span>
-          <h2 className="text-3xl md:text-4xl font-bold text-navy mt-3">
-            Therapeutic Areas
-          </h2>
-          <p className="text-gray-400 mt-3 max-w-xl mx-auto text-sm">
+          <div className="flex items-center justify-center gap-3 mb-5">
+            <div className="h-px w-10 bg-gold" />
+            <span className="text-[11px] tracking-[0.3em] uppercase font-serif text-gold">Areas We Serve</span>
+            <div className="h-px w-10 bg-gold" />
+          </div>
+          <h2 className="font-serif text-4xl font-semibold text-deep">Therapeutic Areas</h2>
+          <p className="text-charcoal/60 mt-4 max-w-xl mx-auto text-sm leading-relaxed">
             Our product portfolio spans across major therapeutic categories —
             addressing diverse healthcare needs with precision and care.
           </p>
         </motion.div>
 
-        {/* Pills Grid */}
-        <div className="flex flex-wrap justify-center gap-4">
+        {/* Pills */}
+        <div className="flex flex-wrap justify-center gap-3">
           {areas.map((area, i) => (
             <motion.div
               key={i}
@@ -49,10 +50,12 @@ export default function TherapeuticAreas() {
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.3, delay: i * 0.05 }}
               viewport={{ once: true }}
-              className="flex items-center gap-2 bg-white border border-gray-100 rounded-full px-5 py-3 shadow-sm hover:border-pharmagreen hover:text-pharmagreen hover:shadow-md transition-all duration-200 cursor-default"
+              className="group flex items-center gap-2 bg-white border border-gold/20 px-5 py-3 hover:bg-deep hover:border-deep transition-all duration-300 cursor-default"
             >
-              <span className="text-xl">{area.icon}</span>
-              <span className="text-navy text-sm font-medium">{area.name}</span>
+              <span className="text-lg">{area.icon}</span>
+              <span className="text-charcoal text-sm font-medium tracking-wide group-hover:text-cream transition-colors duration-300">
+                {area.name}
+              </span>
             </motion.div>
           ))}
         </div>
@@ -63,22 +66,22 @@ export default function TherapeuticAreas() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.4 }}
           viewport={{ once: true }}
-          className="mt-14 bg-navy rounded-2xl px-8 py-8 flex flex-col md:flex-row items-center justify-between gap-6"
+          className="mt-14 bg-deep px-10 py-10 flex flex-col md:flex-row items-center justify-between gap-6 border border-gold/10"
         >
           <div>
-            <p className="text-white font-semibold text-lg">
+            <p className="font-serif text-cream text-xl font-semibold">
               Don't see your therapeutic area?
             </p>
-            <p className="text-blue-200 text-sm mt-1">
+            <p className="text-cream/50 text-sm mt-2">
               We take on custom manufacturing requests for specialized needs.
             </p>
           </div>
-          <a  
-            href="/contact"
-            className="shrink-0 bg-pharmagreen text-white font-semibold px-6 py-3 rounded hover:bg-white hover:text-navy transition-colors duration-200"
+          <Link
+            to="/contact"
+            className="shrink-0 border border-gold text-gold text-[11px] tracking-[0.18em] uppercase font-medium px-8 py-4 hover:bg-gold hover:text-deep transition-all duration-300"
           >
             Talk to Us
-          </a>
+          </Link>
         </motion.div>
 
       </div>
